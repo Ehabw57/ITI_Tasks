@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Task4 </title>
+	</head>
+<style>
+
+</style>
+	<body>
+		<canvas id="canvas" width="1000" height="700" style="border: 1px solid black;">
+		</canvas>
+		
+	</body>
+	<script>
+		const canvas = document.getElementById('canvas')
+		const pen = canvas.getContext('2d')
+		let color = 'black'
+		let size = 10
+
+		function draw(x, y, color) {
+			pen.beginPath()
+			pen.arc(x, y, size, 0, 2 * Math.PI);
+			pen.fillStyle = color;
+			pen.fill();
+		}
+
+		canvas.onmousemove = function (e) {
+			if(event.buttons == 1){
+				draw(e.offsetX, e.offsetY, color)
+			} if(event.buttons == 2) {
+				e.preventDefault();
+				console.log('hiiijd')
+				draw(e.offsetX, e.offsetY, 'white')
+			}
+		}
+
+
+	</script>
+</html>

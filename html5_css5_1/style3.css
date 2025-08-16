@@ -1,0 +1,155 @@
+
+body{
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+header {
+	background-color: orange;
+	color: white;
+}
+
+header section, header span {
+	float: left;
+	margin-left: 10%;
+	margin-block: 30px;
+}
+
+header section {
+	width: 50%;
+	margin-top: 50px;
+}
+
+header h1 , header h3 {
+	text-transform: uppercase;
+	margin: 0;
+}
+
+header span {
+	width: 130px;
+	height: 130px;
+	border-radius: 70px;
+	background-image: url(./spongbob.jpeg);
+	background-position: center;
+	background-size: cover;
+}
+
+aside, main {
+	float: left;
+	margin-inline: 1%;
+}
+
+aside {
+	width: 30%
+}
+
+main {
+	width: 66%;
+}
+
+section h2{
+	padding: 10px 20px;
+	background-color: orange;
+	width: 70%;
+	color: white;
+
+}
+
+section h3 ,section p {
+	margin-left: 10px;
+}
+
+section h3 {
+	margin-bottom: 0;
+}
+
+section p {
+	font-size: 16px;
+	margin-top: 0;
+
+}
+
+aside section h1 {
+	text-align: center;
+	font-size: 30px;
+}
+
+img {
+	margin-left: 2%;
+}
+
+img + p {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+section label , section meter{
+	display: block;
+	margin-left: 30px;
+}
+section meter {
+	width: 80%;
+	height: 40px;
+	appearance: none;
+}
+
+  meter::-webkit-meter-bar {
+    background: #ddd; /* <-- This is the background (empty part) */
+  }
+  .redd::-webkit-meter-optimum-value {
+    background: #FFa219;
+  }
+  .bluee::-webkit-meter-optimum-value {
+    background: #32a9cF;
+  }
+  .greenn::-webkit-meter-optimum-value {
+    background: #02cF01;
+  }
+
+  .rounded-bar {
+	  padding: 10px;
+	  border: solid 10px green;
+	  border-radius: 50%;
+	  margin-inline: 1%;
+  }
+.low , .verylow, .medim{
+	border-top-color: #eaeaea;
+}
+
+.verylow, .low {
+	border-left-color: #eaeaea;
+}
+
+.low{
+	border-bottom-color: #eaeaea;
+}
+
+section a {
+	font-size: 17px;
+	vertical-align: top;
+
+}
+
+
+.clear {
+	clear: both;
+}
+
+footer > span {
+	float: left;
+	width: 33%;
+	height: 10px;
+}
+
+.red {
+	background-color: red;
+}
+.blue {
+	background-color: blue;
+}
+.yellow {
+	background-color: yellow;
+}
+
+aside section {
+	padding-block: 20px;
+}

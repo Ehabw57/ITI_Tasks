@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>task5</title>
+<style>
+	:root {
+		--dark-bg: black;
+		--dark-c : white;
+		--light-c: black;
+		--light-bg: white;
+	}
+
+	.dark {
+		background-color: var(--dark-bg);
+		color: var(--dark-c);
+	}
+
+	.light {
+		background-color: var(--light-bg);
+		color: var(--light-c);
+	}
+
+	body {
+		font-family: Arial, Helvetica, sans-serif;
+		height: 98vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		font-size: 50px;
+	}
+
+	button {
+		padding: 15px  70px;
+		background-color: black;
+		color: white;
+		border: none;
+		border-radius: 50px;
+		font-size: 30px;
+		transition: transform 0.2s;
+	}
+
+	button:active {
+		transform: scale(1.05) ;
+	}
+</style>
+	</head>
+	<body class="light">
+		<h1>Hello Wellcome to my Webiste</h1>
+		<button onclick="toggleTheme(event)">Light</button>
+	</body>
+	<script>
+		function toggleTheme(e) {
+			text = e.target.innerText
+			if( text == 'Dark') {
+				e.target.innerText = 'Light'
+				e.target.classList = 'dark'
+				document.body.classList = 'light'
+			}else {
+				e.target.innerText = 'Dark'
+				e.target.classList = 'light'
+				document.body.classList = 'dark'
+			}
+		}
+	</script>
+</html>

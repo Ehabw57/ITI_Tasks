@@ -1,0 +1,316 @@
+
+@font-face {
+	font-family: 'integralCF';
+	src: url('./assets/integralCF/Fontspring-DEMO-integralcf-demibold.otf')
+}
+@font-face {
+	font-family: "satoshi";
+	src: url('./assets/satoshi/Fonts/OTF/Satoshi-Regular.otf');
+}
+
+body {
+	background-color: #FFF;
+	font-family: "satoshi";
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.unkown {
+	background-color: black;
+	color: white;
+	text-align: center;
+	padding-block: 10px;
+}
+
+.unkown a {
+	color: white;
+}
+
+.close {
+	color: white;
+	position: absolute;
+	font-size: 20px;
+	top: 9px;
+	right: 80px;
+}
+
+.logo {
+	display: inline-block;
+	font-size: 32px;
+	font-weight: 700;
+	font-family: integralCF;
+}
+
+ul {
+	display: inline-flex;
+	width: 321px; 
+	justify-content: space-between;
+
+	align-items: center;
+}
+
+li {
+	font-family: satoshi;
+	font-weight: 400;
+	font-size: 16px;
+}
+
+nav {
+	padding-inline: 10px;
+	display: flex;
+	padding-block: 22px;
+	justify-content: space-between;
+	align-items: center;
+	gap: 40px;
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+nav .fa-bars {
+	display: none;
+}
+
+nav input {
+	width: 577px;
+	font-size: 16px;
+	font-weight: 400;
+	height: 24px;
+	padding-block: 20px;
+	padding-left: 52px;
+	border-radius: 62px;
+	background-color: #F0F0F0;
+}
+
+.input-container {
+	position: relative;
+}
+
+.input-container i {
+	top: 10px;
+	font-size: 20px;
+	position: absolute;
+	left: 25px;
+}
+
+.icon-container {
+	display: flex;
+	justify-content: space-between;
+	font-size: 20px;
+	width: 92px;
+	height: 24px;
+}
+ 
+.icon-container i {
+	color: black;
+}
+
+.hero {
+	background-image: url('assets/hero.png');
+	background-position: bottom;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-color: #F0F0F0;
+	width: 600px;
+	height: 620px;
+}
+
+main {
+	background-color: #f0f0f0;
+	border: 2px solid black;
+}
+
+.main-section {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1440px;
+	margin: 0 auto;
+	background-color: #f0f0f0;
+}
+
+
+
+.main > h1 {
+	width: 577px;
+	font-size: 64px;
+	font-weight: 700;
+	font-family: integralcf;
+	line-height: 64px;
+}
+
+.desc {
+	margin-block: 32px;
+	width: 545px;
+	font-family: "satoshi";
+	font-weight: 400;
+	font-size: 16px;
+}
+ 
+.shop-now{
+	width: 210px;
+	padding: 15px 54px;
+	font-size: 16px;
+	border-radius: 62px;
+	background-color: black;
+	color: white;
+}
+
+.stat {
+	display: flex;
+	justify-content: center;
+	margin-top: 48px;
+}
+
+.stat-card{
+	width: 193px;
+	padding-left: 20px;
+	text-align: left;
+	border-right: 1px solid #919191;
+}
+
+.stat-card:nth-child(1) {
+	padding-left: 0;
+}
+
+.stat-card:nth-child(3) {
+	border: none;
+}
+
+
+.stat-card h3 {
+	font-family: "satoshi";
+	font-size: 40px;
+	font-weight: 700;
+}
+
+.stat-card p {
+	margin-top: 6px;
+}
+
+.sponsors, .sponsors-container {
+	background-color: black;
+}
+
+.sponsors {
+	max-width: 1440px;
+	margin-inline: auto;
+	padding-block: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly ;
+	flex-wrap: wrap;
+	gap: 18px;
+}
+
+.products { 
+	width: 100%;
+}
+
+.products h1 {
+	text-align: center;
+	font-size: 48px;
+	font-family: "integralCf";
+	font-weight: bolder;
+	margin-block: 72px 55px;
+	margin-inline: auto;
+}
+
+.products-container {
+	max-width: 1500px;
+	display: grid;
+	gap: 20px;
+	margin-inline: auto;
+	grid-template-columns: repeat(4, 295px);
+	justify-content: center;
+}
+
+.product-image{
+	width: 295px;
+	height:295px;
+	background-color: #f0f0f0;
+	border-radius: 20px;
+}
+
+.products-container h1 {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+
+.rating {
+	height: 20px;
+}
+
+.view-all {
+	padding: 16px 54px;
+	border: 1px #e2e2e2 solid;
+	border-radius: 20px;
+	background-color: transparent;
+	margin-top: 36px;
+	margin-inline: auto;
+	display: block;
+}
+
+ 
+@media all and (max-width: 1290px) {
+	.main h1 {
+		width: 100%
+	}
+	.main p {
+		width: 100%
+	}
+
+	.input-container {
+		display: none;
+	}
+	.main-section {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	.main , .hero{
+		width: 100%;
+	}
+
+	.main {
+		padding: 40px 20px;
+	}
+
+	.shop-now {
+		width: 95%;
+		margin-inline: auto;
+		display: block;
+	}
+
+	.stat {
+		flex-wrap: wrap;
+	}
+
+	.stat-card:nth-child(2) {
+		border: none;
+	}
+
+	.products-container {
+		grid-template-columns: repeat(3, 295px);
+	}
+}
+
+@media all and (max-width: 980px) {
+	.products-container {
+		grid-template-columns: repeat(2, 295px);
+	}
+}
+
+@media all and (max-width: 680px) {
+	nav .fa-bars {
+		margin-right: 10px;
+		font-size: 35px;
+		display: inline;
+	}
+	nav ul {
+		display: none;
+	}
+}

@@ -1,0 +1,29 @@
+@use 'mixins' as *;
+@use 'functions' as *;
+@use 'variables' as *;
+
+@for $i from 1 through 3 {
+  .fs-#{$i} {
+    font-size: $i * 10px;
+  }
+}
+
+footer {
+  font-size: $large-font-size;
+  background-color: randomColor();
+  color: randomColor();
+  height: 200px;
+}
+
+header {
+  @extend footer;
+  background-color: randomColor();
+}
+
+body {
+  background: linear-gradient(to top, rand-col(), rand-col(), rand-col());
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+

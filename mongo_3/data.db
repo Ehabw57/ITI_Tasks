@@ -1,0 +1,131 @@
+use SchoolDB
+db.createCollection('schools')
+db.schools.insertMany([
+  {
+    _id: 1,
+    name: 'International Knowledge School',
+    city: "Alexandria",
+    level: "High School",
+    students: [
+      { name: "Ehab", age: 18, grade: 98 },
+      { name: "Abdo", age: 19, grade: 91 },
+      { name: "Ahmed", age: 20, grade: 61 }
+    ]
+  },
+  {
+    _id: 2,
+    name: 'Mansheia New School',
+    city: "Qena",
+    level: "Primary School",
+    students: [
+      { name: "Ali", age: 10, grade: 88 },
+      { name: "Ahmed", age: 9, grade: 73 }
+    ]
+  },
+  {
+    _id: 3,
+    name: 'Altramsa Secondary School',
+    city: "Luxor",
+    level: "Secondary",
+    students: [
+      { name: "Sayed", age: 14, grade: 95 },
+      { name: "Khaled", age: 12, grade: 53 }
+    ]
+  },
+  {
+    _id: 4,
+    name: 'Omar bn Khttab',
+    city: "Cairo",
+    level: "High School",
+    students: [
+      { name: "Sayed", age: 14, grade: 95 },
+      { name: "Abdelmjeed", age: 10, grade: 73 },
+      { name: "Ghada", age: 15, grade: 89 },
+      { name: "Rawda", age: 17, grade: 67 }
+    ]
+  }
+]);
+
+
+// 3
+db.schools.find({}, {students:1, _id:0})
+
+// 4
+db.students.insertMany([
+  { name: "Ehab", age: 18, grade: 98, school_id: 1 },
+  { name: "Abdo", age: 19, grade: 91, school_id: 1 },
+  { name: "Ahmed", age: 20, grade: 61, school_id: 1 },
+  { name: "Ali", age: 10, grade: 88, school_id: 2 },
+  { name: "Ahmed", age: 9, grade: 73, school_id: 2 },
+  { name: "Sayed", age: 14, grade: 95, school_id: 3 },
+  { name: "Khaled", age: 12, grade: 53, school_id: 3 },
+  { name: "Sayed", age: 14, grade: 95, school_id: 4 },
+  { name: "Abdelmjeed", age: 10, grade: 73, school_id: 4 },
+  { name: "Ghada", age: 15, grade: 89, school_id: 4 },
+  { name: "Rawda", age: 17, grade: 67, school_id: 4 }
+]);
+
+db.students.insertMany([
+  { name: "Ehab", age: 18, grade: 98, school: { "$ref": "schools", "$id": 1 } },
+  { name: "Abdo", age: 19, grade: 91, school: { "$ref": "schools", "$id": 1 } },
+  { name: "Ahmed", age: 20, grade: 61, school: { "$ref": "schools", "$id": 1 } },
+  { name: "Ali", age: 10, grade: 88, school: { "$ref": "schools", "$id": 2 } },
+  { name: "Ahmed", age: 9, grade: 73, school: { "$ref": "schools", "$id": 2 } },
+  { name: "Sayed", age: 14, grade: 95, school: { "$ref": "schools", "$id": 3 } },
+  { name: "Khaled", age: 12, grade: 53, school: { "$ref": "schools", "$id": 3 } },
+  { name: "Sayed", age: 14, grade: 95, school: { "$ref": "schools", "$id": 4 } },
+  { name: "Abdelmjeed", age: 10, grade: 73, school: { "$ref": "schools", "$id": 4 } },
+  { name: "Ghada", age: 15, grade: 89, school: { "$ref": "schools", "$id": 4 } },
+  { name: "Rawda", age: 17, grade: 67, school: { "$ref": "schools", "$id": 4 } }
+]);
+
+// 5
+db.schools.find({_id: 2}, {students:1, _id:0})
+
+// 6
+db.students.aggregate([
+		{$lookup:{
+			from: 'schools',
+			localField: 'school.$id',
+			foreignField: '_id',
+			as: 'SchoolInfo'
+			}}])
+
+// part two
+db.students.createIndex({name:1})
+db.students.createIndex({grade:1, age:1})
+db.students.getIndexes()
+db.students.dropIndex('grade_1_age_1')
+
+// part three
+mongodump --db=SchoolDB --out ~/backup
+
+mongorestore /backup
+
+
+// part five
+db.createCollection("users", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["name", "email"],
+      properties: {
+        name: {
+          bsonType: "string",
+          minLength: 3,
+          maxLength: 20
+        },
+        email: {
+          bsonType: "string",
+          pattern: "^.+@.+\\..+$"
+        },
+        age: {
+        bsonType: 'int',
+        minimum: 18,
+        maximum: 60
+        }
+      }
+    }
+  }
+});
+

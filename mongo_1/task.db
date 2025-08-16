@@ -1,0 +1,59 @@
+use FacultySystemDB
+db.createCollection('student')
+db.student.insertMany([{FirstName: 'Ehab', LastName:'Hegazy', Age: 24, Faculty:{Name: "Law", Address:'Qena'},Grades:[{CourseName: "Civil Law", Grade: 90, Pass: true},{CourseName: 'International Law', Grade: 40, Pass: false}],IsFired: false},{FirstName: 'Abdo', LastName:'Okasha', Age: 23, Faculty:{Name: "CS", Address:'Qena'},Grades:[{CourseName: 'Network', Grade: 60, Pass: true},{CourseName: 'Embded System', Grade: 94, Pass: true}],IsFired: false},{FirstName: 'Abdulllah', LastName:'Nasr', Age: 24, Faculty:{Name: "IT", Address:'Qena'},Grades:[{CourseName: 'Pattern', Grade: 99, Pass: true},{CourseName: 'Machine Learnign', Grade: 30, Pass: false}],IsFired: true},{FirstName: 'Ahemd', LastName:'Sayed', Age: 12, Faculty:{Name: null, Address:null}}])
+db.student.find()
+db.student.find({FirstName: 'Ehab'})
+db.student.find({$or:[{FirstName:'Ehab'}, {LastName:'Okasha'}]})
+db.student.find({$nor:[{FirstName: 'Ehab'}]})
+db.student.find({Age:{$lte:21}})
+db.student.find({IsFired: true})
+db.student.find({$and:[{Age:{$gt: 21}}, {Faculty:{$not:{$eq: null}}}]})
+db.student.find({FirstName:'Ehab'},{FirstName: 1, LastName: 1, IsFired: 1, _id: 0})
+db.student.updateOne({FirstName: 'Ehab'}, {$set:{LastName: 'Abdulrady'}})
+db.student.updateMany({Age: {$gt: 12}}, {$set:{Age: 25}})
+db.student.replaceOne({FirstName: 'Ehab'},{FirstName: 'Ehab', LastName:'Hegazy', Age: 24, Faculty:{Name: "Law", Address:'Qena'},Grades:[{CourseName: "Civil Law", Grade: 90, Pass: true},{CourseName: 'International Law', Grade: 40, Pass: false}],IsFired: false})
+db.student.deleteMany({IsFired: true})
+db.student.drop()
+db.dropDataBase()
+
+use FacultySystemV2
+db.createCollection('student')
+db.createCollection('faculty')
+db.createCollection('course')
+db.student.insert({FirstName: 'Ehab', LastName:'Hegazy', Age: 24,IsFired: false, FacultyId: 1, Grades:[{CourseID: 1, Grade: 90}]})
+db.faculty.insert({Name: "Law", Address: "Qena"})
+db.course.insert({CourseName: "Civil Law", FinalMark: 100})
+
+# what is redis and how to use it
+redis is an in memory key-value noSQL database
+it has super fast read&wirte because data is stored dirctly on RAM rather on the Disk
+most of the time it is used for caching and saving users sessions
+here is some of commands on how to use redis after installing :
+
+	zerobors@void-linux ~ » redis-cli
+	127.0.0.1:6379> SET name 'Ehab'
+	OK
+	127.0.0.1:6379> get name
+	"Ehab"
+
+you can delete keys:
+	127.0.0.1:6379> DEL name
+	(integer) 1
+	127.0.0.1:6379> get name
+	(nil)
+	127.0.0.1:6379>
+
+you can also set expire time for the keys
+	127.0.0.1:6379> SET name 'ehab'
+	OK
+	127.0.0.1:6379> EXPIRE name 10
+	(integer) 1
+	127.0.0.1:6379> get name
+	"ehab"
+#wait 10 seconds
+	127.0.0.1:6379> get name
+	(nil)
+	127.0.0.1:6379>
+
+
+

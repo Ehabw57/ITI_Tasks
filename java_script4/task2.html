@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body style="background-color: #ea0;">
+		<h1 id='counter'>0</h1>
+		<button onclick="start()">Start</button>
+		<button onclick="puse()">Stop</button>
+
+		<script>
+			var counterFuction = undefined;
+			var h1 = document.getElementById('counter');
+
+			function start() {
+				puse();
+				counterFuction = setInterval(() => {
+					h1.innerText++; 
+				}, 1000)
+			}
+
+			function puse() {
+				clearInterval(counterFuction);
+			}
+		</script>
+	</body>
+</html>

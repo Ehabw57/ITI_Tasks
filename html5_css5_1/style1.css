@@ -1,0 +1,78 @@
+
+body {
+	background-color: darkslateblue;
+}
+body * {
+	border: solid 1px lightcoral;
+	margin: 8px 1%;
+	text-align: center;
+}
+
+
+header {
+	font-size: 30px;
+	padding: 20px 0;
+	background-color: lightpink;
+}
+
+nav {
+	font-size: 20px;
+	padding: 5px;
+	background-color: lightgray;
+}
+
+aside , main{
+	float: left;
+}
+
+main {
+	width: 58%;
+	background-color: lightskyblue;
+}
+
+aside {
+	background-color: lightgreen;
+	width: 35%;
+	padding-block: 114px;
+}
+
+main article, main{
+	padding: 10px;
+	font-weight: bold;
+}
+
+main figure , 
+main p,
+main section,
+footer {
+	padding-block: 10px;
+	font-weight: 300;
+}
+
+article {
+	background-color: lightblue;
+}
+
+figure {
+	background-color: lightyellow;
+}
+
+p {
+	background-color: yellow;
+}
+
+section {
+	background-color: orange;
+}
+
+footer {
+	background-color: lightcyan;
+}
+
+.clear {
+	border: none;
+	clear: both;
+}
+ .container {
+	 background-color: darkblue;
+ }

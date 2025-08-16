@@ -1,0 +1,41 @@
+//part1
+db.students.find({FacultyId:{$exists: true}})
+db.students.find({Grades:{$type: "array"}})
+db.students.find({IsFired:{$exists: false}})
+
+//part2
+db.students.find({Courses:{$all:['JS', 'C#']}})
+db.students.find({Grades:{$elemMatch:{Grade:{$gt: 90} , pass: true}}})
+db.students.find({Grades:$size:{$gte:1}
+
+//part3 A
+db.students.aggregate([
+  {$group: {
+    _id: "$FacultyId",
+	numberOfStudents: {$sum: 1}
+}}])
+db.students.aggregate([{$match: {Grades: {$not: {$elemMatch:{pass:false}}}}}])
+
+// B
+db.students.aggregate([{
+	$lookup: {
+		from: 'facultys',
+		localField: 'FacultyId',
+		foreignField: 'id',
+		as: 'FacultyInfo'
+	}
+}])
+
+// C
+db.students.aggregate([{ $match: { Grades: { $elemMatch: { CourseId: 1 } } } }, { $sort: { "Grades.Grade": -1 } }, {$limit:3}])
+
+// D
+db.students.aggregate([{$unwind:"$Grades"}])
+
+//E
+db.students.aggregate([ { $unwind: "$Grades" }, {$group: { _id: "$FirstName", avgGrade: {$avg: "$Grades.Grade"}}},{ $addFields: {status: {$switch: {branches: [{case: {$gte: ["$avgGrade", 90]}, then: "Excellent"}, {case: {$gte: ["$avgGrade", 70]}, then: "Good"}], default:"Need improvments"}}}}])
+
+// E2
+
+
+

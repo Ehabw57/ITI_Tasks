@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<body>
+		<script>
+			//task1
+			function secretHolder(secert) {
+				return {
+					getSecret: () => secert,
+					setSecret: (newSecret) => { secert = newSecret}
+				}
+			}
+
+			let secret = secretHolder('this is a secret')
+			console.log(secret.getSecret())
+			secret.setSecret('new Secret')
+			console.log(secret.getSecret())
+
+			//task2
+			person1 = {
+				firstName: 'Ehab',
+				lastName: 'Hegazy',
+				getFullName: function() {return  this.firstName + " " + this.lastName}
+			}
+			person2 = {
+				firstName: 'Ahmed',
+				lastName: 'Ibrahem'
+			}
+
+			console.log(person1.getFullName())
+			getFullName2 = person1.getFullName.bind(person2)
+			console.log(getFullName2())
+
+			//task3
+			InvaildAgeError = new Error()
+			InvaildAgeError.name = 'InvaildAgeError'
+
+			function registerUser(age) {
+				try {
+					if (age < 18) {
+						InvaildAgeError.message = "User must be at least 18 years old";
+						throw InvaildAgeError
+					}
+					console.log('user register success')
+				} catch(e) {
+					alert(e.message)
+				}
+			}
+
+			//task4
+			let person = {};
+			Object.defineProperty(person, 'name', {
+				value: 'ehab',
+				enumerable: true
+			})
+
+		</script>
+	</body>
+</html>
+

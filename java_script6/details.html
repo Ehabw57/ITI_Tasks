@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		.color-block {
+			display: inline-block;
+			border-radius: 50px;
+			width: 50px;
+			height: 50px;
+			margin-left: 10px;
+		}
+
+		#loader {
+			margin: 0 auto;
+			width: 70px;
+			height: 70px;
+			border: 10px solid blue;
+			border-radius: 82px;
+			border-top-color: transparent;
+			margin-top: 30%;
+			animation: anime 1s linear infinite;
+		}
+
+		@keyframes anime {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+		</style>
+	</head>
+
+	<body>
+		<div id='loader'></div>
+
+		<script>
+			const href = location.href
+			let Qparam = href.split('?')
+			let productId = Qparam[1].split('=')[1]
+			console.log(productId)
+			const xhr = new XMLHttpRequest()
+			const loader = document.getElementById('loader')
+			xhr.open("GET", "https://itireact-native-day3.vercel.app/products/" + productId)
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState == 4 && xhr.status == 200) {
+					loader.remove()
+					const product = JSON.parse(xhr.responseText)
+					displayProduct(product)
+				}
+			}
+			xhr.send()
+
+			function displayProduct(product) {
+				const productTitle = document.createElement('h1')
+				productTitle.innerText = product.title
+				const img = document.createElement('img')
+				img.setAttribute('src', product.images[1])
+
+				const decription = document.createElement('p')
+				decription.innerText = product.description
+
+
+				const price = document.createElement('h3')
+				price.innerText = product.price
+
+				const colors = document.createElement('div')
+
+				for (color of product.colors) {
+					const span = document.createElement('span')
+					span.style.backgroundColor = color;
+					span.classList.add('color-block')
+					colors.appendChild(span)
+				}
+
+
+				document.body.appendChild(productTitle)
+				document.body.appendChild(img)
+				document.body.appendChild(decription)
+				document.body.appendChild(price)
+				document.body.appendChild(colors)
+
+			}
+
+		</script>
+	</body>
+</html>

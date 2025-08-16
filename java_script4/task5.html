@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body onkeydown="move(event.key)">
+		<img id='scratch' src='./imgs/scratch.png' height='200' width='200' style="position: absolute; top: 0; left: 0;">
+
+
+		<script>
+			let scratch = document.getElementById('scratch').style
+			let Xmax = window.innerWidth - 200;
+			let Ymax = window.innerHeight - 200;
+			let postionX = 0;
+			let postionY = 0;
+			let stepAmount = 70;
+
+			function move(key) {
+				switch(true) {
+					case ( key == 'l' || key == 'ArrowRight') :
+						if (postionX < Xmax)
+							postionX += stepAmount;
+						scratch.transform = 'none'
+						break;
+					case ( key == 'h' || key == 'ArrowLeft') :
+						if (postionX > 0)
+							postionX -= stepAmount;
+						scratch.transform = 'scaleX(-1)'
+						break;
+					case ( key == 'j' || key == 'ArrowDown') :
+						if (postionY < Ymax)
+							postionY += stepAmount;
+						break;
+					case ( key == 'k' || key == 'ArrowUp') :
+						if (postionY > 0)
+							postionY -= stepAmount;
+						break;
+				}
+
+				scratch.left = `${postionX}px`;
+				scratch.top = `${postionY}px`;
+
+			}
+		</script>
+	</body>
+</html>

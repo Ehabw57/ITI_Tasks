@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+
+	<body>
+		<h1 id="headLine">Wellcome To my site</h1>
+		<span onmouseout="toggle('Wellcome To my site')"
+			onmouseenter="toggle(':) اهلا وسهلا نورت الويب سايت')"
+			style="text-decoration: underline; color: blue;"
+
+			>translte to arabic</span>
+		<script>
+			let headline = document.getElementById('headLine')
+			function toggle(text) {
+				headline.innerText = text
+			}
+
+		</script>
+	</body>
+</html>

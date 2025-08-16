@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<center>
+			<h1>Images Gallary</h1>
+			<hr>
+			<br>
+			<button onclick="i++; displayImg()">Next</button>
+			<button onclick="i--; displayImg()"">Previous</button>
+			<button onclick="startSlide()">SlideShow</button>
+			<button onclick="stopSlide()">Stop</button>
+			<br>
+			<br>
+			<img id='screen' src='./imgs/main.png' style="border: 2px solid black" width='400' height='280'>
+			<br>
+		</center>
+
+		<script>
+			let imgs = ['img1.png', 'img2.png', 'img3.png', 'img4.png', 'img5.png'];
+			let path = "./imgs/";
+			let i = 0;
+			let screen = document.getElementById('screen');
+			let intervalFunction = undefined;
+
+			function displayImg() {
+				if ( i < 0)
+					i = imgs.length - 1
+				if ( i >= imgs.length)
+					i = 0
+
+				screen.src = path+imgs[i]
+			}
+
+			function stopSlide() {
+				if (intervalFunction) {
+					clearInterval(intervalFunction);
+					intervalFunction = undefined;
+				}
+			}
+
+			function startSlide() {
+				if (!intervalFunction) {
+					intervalFunction = setInterval(()=> 
+						{
+							i++;
+							displayImg();
+						}, 800)
+				}
+			}
+
+		</script>
+	</body>
+</html>

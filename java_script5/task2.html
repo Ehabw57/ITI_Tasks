@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+
+	<body>
+
+		<input type="text" id='input' placeholder='Add Task'>
+		<button onclick="createTask()">Add</button>
+
+		<ol></ol>
+
+		<script>
+			const input = document.getElementById('input')
+			const list = document.getElementsByTagName('ol')[0]
+
+			function createTask() {
+				const taskText = input.value;
+				if (taskText == '')
+					return;
+
+				for (let item of list.children) {
+					if (item.innerText == taskText + 'X')
+						return;
+				}
+
+				const item = document.createElement('li')
+				item.innerText = taskText
+				item.style.margin = '7px';
+
+				const button = document.createElement('button')
+				button.innerText = 'X'
+				button.style.marginLeft = '3px';
+				button.addEventListener('click', (event) => {
+					event.target.parentElement.remove()
+				})
+
+				item.appendChild(button)
+				list.appendChild(item)
+
+			}
+		</script>
+	</body>
+</html>

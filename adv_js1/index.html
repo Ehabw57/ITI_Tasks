@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href='./style.css'>
+		<style>
+		</style>
+	</head>
+
+<body>
+	<center>
+	<textarea id='js'></textarea>
+	<textarea id='css'></textarea>
+	<textarea id='html'></textarea>
+	<h5>javaScript</h5>
+	<h5>Css</h5>
+	<h5>Html</h5>
+	<br>
+	<button onclick="inject()">insert</button>
+	</center>
+
+	<div  id='container'></div>
+	<script>
+		//task1
+		const removeSpaces = str => str.split(' ').join('');
+
+		//task2
+		function Book(title, author, pages){
+			this.title = title;
+			this.author = author;
+			this.pages = pages;
+		}
+		Book.prototype.getSummary = function() { return `The book ${this.title} wrote by ${this.author} has ${this.pages}`}
+		const book1 = new Book('Atomic Habits', "James Clear", 130)
+		const book2 = new Book('Clean Code', "Robert Manson", 430)
+		const book3 = new Book('Rich dad Poor dad', "Mark Greson", 376)
+
+		//task3
+		String.prototype.toEmoji = function () {
+			const emojis = {
+				happy: '😄',
+				love: '♡',
+				sad: '😞',
+				angry: '😠'
+			}
+			let strArr = this.valueOf().split(' ');
+
+			for( let i in strArr) {
+				if (Object.keys(emojis).includes(strArr[i])) {
+					strArr[i] = emojis[strArr[i]]
+				}
+			}
+			return strArr.join(' ')
+		}
+
+		//task4
+		function captilazie(str) {
+			let strArr = str.split(' ')
+			
+			for(let i = 0; i < strArr.length; i++) {
+				strArr[i] = strArr[i].replace(strArr[i][0], strArr[i][0].toUpperCase())
+			}
+			return strArr.join(' ')
+		}
+
+		function handelText(text, callBack) {
+			if (typeof(text) != 'string')
+				console.error('sorry you should pass a string to the funciton');
+
+			obj = {
+				upperCase: text.toUpperCase(),
+				lowerCase: text.toLowerCase(),
+				captilazied: captilazie(text)
+			}
+			callBack(obj)
+		}
+
+		handelText('i love Java script SO Much', (obj) => {
+			console.log(obj)
+		})
+
+		//task5
+		const htmlCode = document.getElementById('html')
+		const cssCode = document.getElementById('css')
+		const jsCode = document.getElementById('js')
+		const container = document.getElementById('container')
+		const style = document.getElementsByTagName('style')[0]
+
+		function inject() {
+			container.innerHTML = htmlCode.value
+			style.innerText = cssCode.value
+
+			const excuteFunciton = new Function(jsCode.value)
+			excuteFunciton()
+
+
+		}
+
+		</script>
+</body>
+</html>
+

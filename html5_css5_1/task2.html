@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+	<head>
+		<title>Regestain</title>
+		<link rel='stylesheets' href="./style2.css">
+	</head>
+	<body>
+
+		<form>
+			<label for="name">Name:</label>
+		<input id="name" type='text' required />
+		 
+		<br>
+
+			<label for="email">Email:</label>
+		<input id="email"type='email' required />
+
+		<br>
+
+			<label for="interest">interests:</label>
+		<select id="interest">
+			<option disabled selected>select your intersets</option>
+			<optgroup label='Programming langs'>
+				<option>C</option>
+				<option>Python</option>
+				<option>JavaScript</option>
+			</optgroup>
+			<optgroup label="FrameWroks">
+				<option>Vue</option>
+				<option>React</option>
+				<option>Angular</option>
+			</optgroup>
+			<optgroup label="LifeStyles">
+				<option>Swimming</option>
+				<option>Reading</option>
+				<option>FootBall</option>
+			</optgroup>
+		</select>
+
+		<br>
+
+			<label for="country">Country:</label>
+		<input id='country' list="Countery"/>
+		<datalist id="Countery">
+			<option>Qena</option>
+			<option>Cairo</option>
+			<option>Aswan</option>
+			<option>Luxor</option>
+		</datalist>
+		 
+		<br>
+
+		<label> Gender:</label>
+		<label for='male'>Male</label>
+		<input type='radio' id='male' name='gender'/>
+		<label for='female'>Female</label>
+		<input type='radio' id='female'  name='gender'/>
+
+		<br>
+
+		<label for="birthdate"> BirthDate:</label>
+		<input type='date' />
+		</form>
+
+	</body>
+</html> 

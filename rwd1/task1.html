@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>task1</title>
+		<link rel='stylesheet' href='./style.css'/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+	</head>
+	<body>
+		<header>
+			<span class='close' onclick="remove(event)" id="close" >x</span>
+			<div class='unkown' id="unkown">Sign up and get 20% off to your first order. <a href="#">Sign Up Now</a> </div>
+			<nav>
+				<div>
+				<i class="fa-solid fa-bars"></i>
+				<h3 class='logo'>SHOP.CO</h3>
+				</div>
+				<ul type="none">
+					<li>Shop</li>
+					<li>On Sale</li>
+					<li>New Arrivals</li>
+					<li>Brands</li>
+				</ul>
+				<div class="input-container">
+				<i class="fa-solid fa-magnifying-glass"></i>
+				<input type='text' placeholder="Search for products..."/>
+				</div>
+				<span class='icon-container'>
+					<i class="fa-solid fa-magnifying-glass"></i>
+					<i class="fa-solid fa-cart-shopping"></i>
+					<i class="fa-solid fa-user"></i>
+				</span>
+			</nav>
+		</header>
+		<main>
+			<section class="main-section">
+				<div class="main">
+					<h1>Find clothes that matches your style</h1>
+					<p class="desc">Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
+					<button class="shop-now">Shop Now</button>
+
+					<div class="stat">
+						<span class="stat-card">
+							<h3>200&plus;</h3>
+							<p>International Brands</p>
+						</span>
+
+						<span class="stat-card">
+							<h3>2,000&plus;</h3>
+							<p>High-Quality Products</p>
+						</span>
+
+						<span class="stat-card">
+							<h3>30,00&plus;</h3>
+							<p>Happy Customers</p>
+						</span>
+					</div>
+				</div>
+				<div src="./assets/hero.png" class="hero"> </div>
+			</section>
+
+			</main>
+			<section class="sponsors-container">
+				<article class="sponsors">
+				<img src="assets/spons1.png">
+				<img src="assets/spons2.png">
+				<img src="assets/spons3.png">
+				<img src="assets/spons4.png">
+				<img src="assets/spons5.png">
+				</article>
+			</section>
+
+			<section class='products'>
+				<h1>NEW ARRIVALS</h1>
+
+				<div class="products-container">
+					<div class='product-card'>
+						<img class="product-image" src="assets/product0.png"/>
+						<p>T-shirt with Tape Details</p>
+						<img class="rating" src="assets/rating.jpg" />
+						<p>$120</p>
+					</div>
+					<div class='product-card'>
+						<img class="product-image" src="assets/product1.png"/>
+						<p>Skinny Fit Jeans</p>
+						<img class="rating" src="assets/rating.jpg" />
+						<p>$240</p>
+					</div>
+					<div class='product-card'>
+						<img class="product-image" src="assets/product2.png"/>
+						<p>Checkered Shirt</p>
+						<img class="rating" src="assets/rating.jpg" />
+						<p>$180</p>
+					</div>
+					<div class='product-card'>
+						<img class="product-image" src="assets/product3.png"/>
+						<p>Sleeve Striped T-shirt</p>
+						<img class="rating" src="assets/rating.jpg" />
+						<p>$130</p>
+					</div>
+				</div>
+				<button class="view-all">View All</button>
+			</section>
+
+			<section class='products'>
+				<h1>TOP SELLING</h1>
+
+				<div class="products-container">
+					<div class='product-card'>
+						<img class="product-image" src="assets/product4.png"/>
+						<p>Vertical Striped Shirt</p>
+						<img class="rating" src="assets/rating.jpg" />
+						<p>$120</p>
+					</div>
+					<div class='product-card'>
+						<img class="product-image" src="assets/product5.png"/>
+						<p>Courage Graphic T-shirt</p>
+						<img class="rating" src="assets/rating.jpg" />
+						<p>$240</p>
+					</div>
+					<div class='product-card'>
+						<img class="product-image" src="assets/product6.png"/>
+						<p>Loose Fit Bermuda Shorts</p>
+						<img class="rating" src="assets/rating.jpg" />
+						<p>$180</p>
+					</div>
+					<div class='product-card'>
+						<img class="product-image" src="assets/product7.png"/>
+						<p>Faded Skinny Jeans</p>
+						<img class="rating" src="assets/rating.jpg" />
+						<p>$130</p>
+					</div>
+				</div>
+				<button class="view-all">View All</button>
+			</section>
+			<script>
+				const target = document.getElementById('unkown')
+
+				function remove(e) {
+					target.remove()
+					e.target.remove()
+				}
+			</script>
+	</body>
+</html>

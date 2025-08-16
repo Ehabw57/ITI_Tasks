@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Task1 </title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Playwrite+HU:wght@300&display=swap" rel="stylesheet">
+		<style>
+code {
+	background-attachment: wheat;
+}
+			ul {
+				background-color: gray;
+				border-radius: 5px;
+				margin: 0 auto;
+				padding: 0;
+				width: fit-content;
+			}
+			ul li {
+				color: white;
+				font-size: 38px;
+				padding: 15px 30px;
+				display: inline-block;
+				transition: 0.2s;
+			}
+
+			ul li:hover {
+				cursor: pointer;
+				background-color: green;
+			}
+
+			p {
+				font-family: "Playwrite HU", sans-serif;
+				text-align: center;
+			}
+
+			ol li:nth-child(even) {
+				color: royalblue;
+			}
+
+			.hamada {
+				font-size: 20px;
+				background-color: rosybrown;
+				height: 200px;
+				aspect-ratio: 2/1;
+			}
+
+			.filter {
+				filter: grayscale(100%);
+			}
+
+			.mask {
+				mask: url('./google.png') no-repeat 50% 50%;}
+		}
+
+		</style>
+	</head>
+	<body>
+		<nav>
+			<ul type="none">
+				<li><i class="fa-solid fa-house"></i></li>
+				<li><i class="fa-solid fa-magnifying-glass"></i></li>
+				<li><i class="fa-solid fa-envelope"></i></li>
+				<li><i class="fa-solid fa-globe"></i></li>
+				<li><i class="fa-solid fa-trash-can"></i></li>
+			</ul>
+		</nav>
+		<p>This Text Is Using Another Fonttype</p>
+
+		<ol>
+			<li>Reading</li>
+			<li>Condign</li>
+			<li>Gaming</li>
+			<li>Running</li>
+		</ol>
+
+		<div class='hamada'> Hi, I'm Hamada and i dont have a height property </div>
+
+		<h3>you can add filter to images with <code>filter</code> property</h3>
+		<img class='filter' width="300" height="300" src='./img.jpeg'/>
+
+		<h3>You can mask images based on another image using the <code>mask</code> property</h3>
+		<img class='mask' width="1500" height="1200" src='img2.jpeg'
+		
+
+	</body>
+</html> 

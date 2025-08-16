@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Task3</title>
+		<style>
+svg  *:hover {
+	fill: cyan;
+}
+
+		#text  {
+			font-size: 30px
+		}
+
+		</style>
+	</head>
+	<body>
+		<svg id="container" width="500" height="500" style="border: solid 1px black;"> 
+			<circle id="face" cx="250" cy="250" r="200" fill='wheat'></circle>
+			<circle id="leftEar" cx="60" cy="250" r="50" fill="wheat" ></circle>
+			<circle id="rightEar" cx="440" cy="250" r="50" fill="wheat" ></circle>
+			<circle id="leftEye" cx="170" cy="190" r="40" fill="white" ></circle>
+			<circle id="rightEye" cx="330" cy="190" r="40" fill="white" ></circle>
+			<ellipse id="nose" rx="20" ry="40" cx="250" cy="290" fill="lightyellow"></ellipse>
+			<rect   id="mouth" width="150" height="30" x="175" y="360" fill="pink" />
+			<ellipse id="hair" rx="160" ry="50" cx="250" cy="70"></ellipse>
+		</svg>
+		<div style="border: solid 1px black; width: 500px; height: 200px;";>
+			<p id="text"></p>
+		</div>
+
+	</body>
+	<script>
+		const container = document.getElementById('container')
+		const text = document.getElementById('text')
+		container.addEventListener('mouseover', (e) => {
+			if (e.target.tagName !== 'svg')
+				text.innerText = 'This is a ' + e.target.id
+		})
+		container.addEventListener('mouseout', (e) => {
+			text.innerText = ''
+		})
+	</script>
+</html>

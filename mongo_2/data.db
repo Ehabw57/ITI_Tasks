@@ -1,0 +1,94 @@
+use ITI_DB
+db.createCollection('students')
+db.createCollection('facultys')
+db.createCollection('courses')
+
+
+db.facultys.insertMany([
+  { id: 1 , FacultyName: "Computer Sinsce", Address: "Cairo" },
+  { id: 2 , FacultyName: "Engineering", Address: "Alexandria" },
+  { id: 3 , FacultyName: "Arts", Address: "Minia" }
+])
+
+
+db.courses.insertMany([
+  { id: 1 , CourseName: "JS", FinalMark: 100 },
+  { id: 2 , CourseName: "C#", FinalMark: 100 },
+  { id: 3 , CourseName: "OS", FinalMark: 100 },
+  { id: 4 , CourseName: "DB", FinalMark: 100 },
+  { id: 5 , CourseName: "History", FinalMark: 100 },
+  { id: 6 , CourseName: "Network", FinalMark: 100 }
+])
+
+
+
+
+db.students.insertMany([
+  {
+    FirstName: "Ahmed",
+    LastName: "Ali",
+    Age: 21,
+    FacultyId: 1,
+    Grades: [
+      { CourseId: 3, Grade: 95, pass: true },
+      { CourseId: 5, Grade: 88, pass: true }
+    ],
+    IsFired: false
+  },
+  {
+    FirstName: "Sara",
+    LastName: "Mohamed",
+    Age: 20,
+    FacultyId: 1,
+    Grades: [
+      { CourseId: 5 , Grade: 92, pass: true },
+      { CourseId: 3 , Grade: 85, pass: true }
+    ],
+    IsFired: false
+  },
+  {
+    FirstName: "Omar",
+    LastName: "Hassan",
+    Age: 23,
+    FacultyId: 2,
+    Grades: [
+      { CourseId: 1 , Grade: 78, pass: true },
+      { CourseId: 2 , Grade: 55, pass: false },
+      { CourseId: 6 , Grade: 88, pass: true }
+    ],
+    IsFired: true
+  },
+  {
+    FirstName: "Laila",
+    LastName: "Omar",
+    Age: 19,
+    FacultyId: 2,
+    Grades: [
+      { CourseId: 1 , Grade: 99, pass: true },
+      { CourseId: 6 , Grade: 60, pass: true }
+    ]
+  },
+  {
+    FirstName: "Mostafa",
+    LastName: "Khaled",
+    Age: 22,
+    FacultyId: 3,
+    Grades: [
+      { CourseId: 4 , Grade: 65, pass: false },
+      { CourseId: 5 , Grade: 70, pass: true }
+    ],
+    IsFired: false
+  },
+  {
+    FirstName: "Nour",
+    LastName: "Fahmy",
+    Age: 24,
+    FacultyId: 2,
+    Grades: [
+      { CourseId: 2 , Grade: 91, pass: true },
+      { CourseId: 1 , Grade: 93, pass: true },
+      { CourseId: 6 , Grade: 85, pass: true }
+    ],
+    IsFired: false
+  }
+])

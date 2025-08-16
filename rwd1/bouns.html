@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bouns</title>
+<style>
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	width: 600px;
+	display: grid;
+	gap: 10px;
+	grid-template-areas: 
+		'. nd nd'
+		'rd rd th'
+		'. . th';
+}
+.grid-element {
+	padding: 50px;
+	background-color: red;
+	color: white;
+	font-size: 30px;
+	text-align: center;
+}
+
+div:nth-child(2) {
+	background-color: darkblue;
+	grid-area: nd;
+}
+div:nth-child(3) {
+	background-color: darkblue;
+	grid-area: rd;
+}
+div:nth-child(4) {
+	background-color: blue;
+	grid-area: th;
+}
+</style>
+	</head>
+	 <body>
+		 <div class='container'>
+			 <div class="grid-element">1</div>
+			 <div class="grid-element">2</div>
+			 <div class="grid-element">3</div>
+			 <div class="grid-element">4</div>
+			 <div class="grid-element">5</div>
+			 <div class="grid-element">6</div>
+		 </div>
+
+	 </body>
+</html>

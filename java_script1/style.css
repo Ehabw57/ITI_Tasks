@@ -1,0 +1,75 @@
+body {
+	font-family: sans-serif;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	margin: 14% auto;
+	width: 47%;
+	height: auto;
+	border: solid 6px grey;
+}
+
+.container .header-container {
+	background-color: #eee;
+	padding: 10px 20px;
+	border-bottom: solid 1px grey;
+}
+
+.header-container > h1 {
+	display:inline-block;
+}
+
+.header-container > clear {
+	display: inline-block;
+	font-size: 30px;
+	margin-left: 73%;
+	font-weight: bolder;
+}
+
+.container h3 {
+	margin-top: 30px;
+	padding: 10px 20px;
+}
+
+.skills-container {
+	border: solid 1px grey;
+	padding: 10px 20px;
+	width: 90%;
+	margin: 5px auto;
+}
+
+.skill-card {
+	background-color: #bbb;
+	display: inline-block;
+	padding: 8px 13px;
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+
+.container p {
+	margin: 3px 20px;
+}
+
+.container button {
+	margin-top: 20px;
+	padding: 10px 15px;
+	margin-bottom: 20px;
+	font-size: 16px;
+	font-weight: bold;
+	border: none;
+}
+
+.save {
+	margin-left: 20px;
+	background-color: #2c3;
+	color: #FFF;
+}
+
+.cancel {
+	background-color: #FFF;
+	color: #2c3;
+}
