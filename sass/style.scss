@@ -4,7 +4,7 @@
 
 @for $i from 1 through 3 {
   .fs-#{$i} {
-    font-size: $i * 10px;
+    font-size: $i * 20px;
   }
 }
 
@@ -21,9 +21,11 @@ header {
 }
 
 body {
-  background: linear-gradient(to top, rand-col(), rand-col(), rand-col());
+  background: randomFlag();
   background-repeat: no-repeat;
   height: 100vh;
 }
+
+
 
 

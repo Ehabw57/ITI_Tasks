@@ -5,3 +5,9 @@ $bg-secondary: darkblue;
 $large-margin: 20px;
 $small-margin: 10px;
 $colors: red, black, white;
+$flags: (
+  (black, white, red),
+  (red, white, red),
+  (red, white, black)
+);
+

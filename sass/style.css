@@ -1,28 +1,28 @@
 .fs-1 {
-  font-size: 10px;
-}
-
-.fs-2 {
   font-size: 20px;
 }
 
+.fs-2 {
+  font-size: 40px;
+}
+
 .fs-3 {
-  font-size: 30px;
+  font-size: 60px;
 }
 
 footer, header {
   font-size: 30px;
-  background-color: rgb(204, 114, 180);
-  color: rgb(186, 218, 55);
+  background-color: rgb(222, 44, 88);
+  color: rgb(150, 144, 145);
   height: 200px;
 }
 
 header {
-  background-color: rgb(54, 201, 78);
+  background-color: rgb(255, 180, 70);
 }
 
 body {
-  background: linear-gradient(to top, black, red, red);
+  background: linear-gradient(to top, red 0 33%, white 33% 66%, black 66% 100%);
   background-repeat: no-repeat;
   height: 100vh;
 }
