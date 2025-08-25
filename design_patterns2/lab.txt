@@ -1,0 +1,17 @@
+1-Consider that we have A store that sell products and  every day the store put new products into the store and the store want to let every people that interested with store that new product is in the store now.
+
+
+
+2-Suppose that we play playstation football game and during the game we want to change the game plan
+    (attack -defence - meduim)
+
+3-Suppose we are building an application for a pizza store and we need to model their pizza classes. Assume they offer four types of pizzas namely Peppy Paneer, Farmhouse, Margherita  and Chicken Fiesta.and we want to add Toppings like FreshTomato. choose the best design pattern to solve this problem.
+
+4-Make Demo apply facade pattern on freelance system
+
+5-Make Demo apply adapter pattern
+
+6-Make Demo apply Liskov substitution principle.
+7-Make Demo apply Interface Seg principle.
+
+8-Make Report dependency inversion principle explain and demo => send on email: asmaaahmed23762@gmail.com , deadline 29/8/2025
