@@ -1,0 +1,31 @@
+<div class="container py-2">
+  <div class="g-3 row cards">
+    @for (prd of filterdProducts; track prd.id) {
+    <div [routerLink]="['/details', prd.id]" class="col-4">
+      <div
+        productStyle
+        [ngStyle]="{ 'background-color': prd.quantity == 0 ? 'yellow' : 'white' }"
+        class=" card p-2"
+      >
+        @if(!prd.isPurched){
+        <img class="img-fluid" [src]="prd.imgUrl" />
+        }@else {
+          <div class="done-buy">
+        <p >Thank you for buying {{ clinetName }}</p>
+        </div>
+        }
+        <h2>{{ prd.name }}</h2>
+        <p>{{ prd.price | currency : 'EGP'}}</p>
+        <p>{{date|date : 'd/M/yyyy'}}</p>
+        <p>quantity: {{ prd.quantity }}</p>
+        <button
+          (click)="prd.isPurched = !prd.isPurched; prd.quantity -= 1; emitAddtoCart(prd)"
+          [disabled]="prd.quantity == 0"
+        >
+          Buy
+        </button>
+      </div>
+    </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,59 @@
+.card {
+  border: none;
+background: #fff;
+border-radius: 12px;
+}
+
+.card h2 {
+font-size: 1.2rem;
+margin: 10px 0;
+}
+
+.card img {
+  border-radius: 13px ;
+}
+
+.card p {
+font-size: 1rem;
+color: #555;
+margin: 5px 0 15px;
+}
+.card button {
+background-color: #28a745;
+color: white;
+border: none;
+padding: 10px 15px;
+margin-bottom: 15px;
+border-radius: 6px;
+cursor: pointer;
+transition: background 0.3s ease;
+}
+
+.card button:hover {
+background-color: #218838;
+}
+.card button:disabled {
+background-color: #a0a0a0;
+}
+
+.done-buy{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 397px;
+  font-size: 1.5rem;
+  background-color: #28a745;
+  text-align: center;
+  color: white;
+  border-radius: 13px ;
+}
+
+.done-buy p{
+  font-weight: bold;
+  color: white;
+}
+
+.container{
+  margin-top: 20px;
+  background-color: #f8f9fa;
+}

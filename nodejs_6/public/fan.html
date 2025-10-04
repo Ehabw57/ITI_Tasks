@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Task2</title>
+	</head>
+<style>
+#fan {
+	width: 500px;
+	height: 500px;
+	background-image: url(./fan.png);
+	background-position: center;
+	background-size: cover;
+	animation: rotate infinite linear;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes rotate {
+	form {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+</style>
+	<body>
+		<div id='fan'></div>
+		<button id="switch" onclick="toggole(event)">ON</button>
+		<button onclick="speed(2)">3</button>
+		<button onclick="speed(1)">2</button>
+		<button onclick="speed(0.5)">1</button>
+	</body>
+	<script>
+		const Switch = document.getElementById('switch');
+		const fan = document.getElementById('fan');
+		function speed(s) {
+			if (Switch.innerText == 'ON')
+			fan.style.animationDuration = s+'s'; 
+		}
+
+		function toggole(e) {
+			if(e.target.innerText == 'ON') {
+				fan.style.animationPlayState = 'paused'
+				e.target.innerText = 'OFF' 
+			} else {
+				fan.style.animationPlayState = 'running'
+				e.target.innerText = 'ON' 
+			}
+		}
+	</script>
+</html>

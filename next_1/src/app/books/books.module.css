@@ -1,0 +1,25 @@
+.cardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    width: 200px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: gainsboro;
+    box-shadow: 0 0 8px 1px gray;
+    padding: 10px;
+}
+
+.book-img{
+    width: 100%;
+}
+
+.title {
+    width: 100%;
+}

@@ -1,0 +1,10 @@
+
+.products {
+  overflow-y: scroll;
+  height: 720px;
+  padding: 10px;
+}
+
+.products > * {
+  flex: 1 1;
+}

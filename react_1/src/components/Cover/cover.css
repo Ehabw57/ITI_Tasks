@@ -1,0 +1,29 @@
+header {
+  background-image: url('../../assets/cover.png');
+  height: 850px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  padding-left: 300px;
+  padding-top: 200px;
+  gap: 1px;
+}
+
+.hero h1 {
+  width: 50%;
+  font-size: 100px;
+  margin-bottom:50px ;
+  font-family: cursive;
+}
+
+.hero button{
+  text-transform: uppercase;
+  width: 160px;
+  background-color: black;
+  color: white;
+  padding: 5px 25px;
+}

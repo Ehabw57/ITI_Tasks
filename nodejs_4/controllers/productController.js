@@ -47,7 +47,6 @@ async function getProductById(req, res) {
 async function deleteProduct(req, res) {
   try {
     const deletedProduct = await Product.findByIdAndDelete(req.params.id);
-    console.log(deletedProduct);
     deletedProduct
       ? res.json({ message: "product deleted succesfully" })
       : res.json({ message: "sorry product not found" });

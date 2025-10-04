@@ -1,0 +1,24 @@
+<select [(ngModel)]="selectedCat">
+  <option value="1">Electronics</option>
+  <option value="2">Accessories</option>
+  <option value="3">Home</option>
+</select>
+<p>You selected category: {{ selectedCat }}</p>
+
+<div class="container py-2">
+  <div class="g-3 row cards">
+    @for (prd of filterdProducts; track prd.id) {
+      <div [ngStyle]="{'background-color':prd.quantity == 0 ? 'yellow' : 'white'}" class="col-12 col-md-4 col-lg-3 card p-2">
+        @if(!prd.isPurched){
+        <img class="img-fluid" [src]="prd.imgUrl" />
+        }@else {
+          <p style="margin-bottom:240px">Thank you for buying {{clinetName}}</p>
+        }
+        <h2>{{prd.name}}</h2>
+        <p>${{prd.price}}</p>
+        <p>quantity: {{prd.quantity}}</p>
+        <button (click)="prd.isPurched = !prd.isPurched; prd.quantity -= 1" [disabled]="prd.quantity == 0">Buy</button>
+      </div>
+    }
+  </div>
+</div>

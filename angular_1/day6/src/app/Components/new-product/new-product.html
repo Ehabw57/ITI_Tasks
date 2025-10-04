@@ -1,0 +1,92 @@
+<form (ngSubmit)="addNewProduct()" #form="ngForm">
+  <label for="produtName">Product Name:</label>
+  <input
+    type="text"
+    name="name"
+    id="produtName"
+    class="form-controller"
+    required
+    minlength="5"
+    [(ngModel)]="newProduct.name"
+    #name="ngModel"
+  />
+  @if((name.touched || name.dirty)&& name.errors?.['required']){
+  <div class="text-danger">Name is requires</div>
+  } @if((name.touched || name.dirty)&& name.errors?.['minlength']){
+  <div class="text-danger">Name length should be at least 5 chars</div>
+  }
+  <br />
+
+  <label for="prodPrice">Price:</label>
+  <input
+    type="number"
+    name="price"
+    id="prodPrice"
+    class="form-controller"
+    required
+    min="1"
+    [(ngModel)]="newProduct.price"
+    #price="ngModel"
+  />
+  @if((price.touched || price.dirty)&& price.errors?.['required']){
+  <div class="text-danger">price is requires</div>
+  } @if((price.touched || price.dirty)&& price.errors?.['min']){
+  <div class="text-danger">Price should be greater than 0</div>
+  }
+  <br />
+
+  <label for="prodQuantity">Quantity:</label>
+  <input
+    type="number"
+    name="quantity"
+    id="prodQuantity"
+    class="form-controller"
+    required
+    min="1"
+    [(ngModel)]="newProduct.quantity"
+    #quantity="ngModel"
+  />
+  @if((quantity.touched || quantity.dirty)&& quantity.errors?.['required']){
+  <div class="text-danger">Quantity is requires</div>
+  } @if((quantity.touched || quantity.dirty)&& quantity.errors?.['min']){
+  <div class="text-danger">Quantity should be greater than 0</div>
+  }
+  <br />
+
+  <label for="prodImg">Image URL:</label>
+  <input
+    type="url"
+    name="imgURL"
+    id="prodImg"
+    class="form-controller"
+    required
+    [(ngModel)]="newProduct.imgUrl"
+    #imgUrl="ngModel"
+  />
+
+  @if((imgUrl.touched || imgUrl.dirty)&& imgUrl.errors?.['required']){
+  <div class="text-danger">img is required</div>
+  }
+  <br />
+
+  <label for="prodCategory">Category:</label>
+  <select
+    type="number"
+    name="categoryID"
+    id="prodCategory"
+    class="form-controller"
+    required
+    [(ngModel)]="newProduct.categoryId"
+    #categoryId="ngModel"
+  >
+    <option value="1">Electronics</option>
+    <option value="2">Computers</option>
+    <option value="3">Furniture</option>
+  </select>
+  @if((categoryId.touched || categoryId.dirty)&& categoryId.errors?.['required']){
+  <div class="text-danger">category is requires</div>
+  }
+
+  <br />
+  <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+</form>

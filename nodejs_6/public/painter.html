@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Task4 </title>
+	</head>
+<style>
+	button {
+		padding: 15px;
+		border: none;
+	}
+
+	input {
+		width: 30px;
+		height: 20px;
+	}
+
+</style>
+	<body>
+		<canvas id="canvas" width="1000" height="700" style="border: 1px solid black;">
+		</canvas>
+		<div id='colorPicker'>
+			<button name='blue' style="background-color:blue;"></button>
+			<button name='red' style="background-color:red;"></button>
+			<button name='yellow' style="background-color: yellow;"></button>
+			<input max='40' min="1" id='width' type="number" />
+		</div>
+		<button onclick="clearAll()">clear all</button>
+		
+	</body>
+	<script>
+		const widthInput = document.getElementById('width')
+		const colorpicker = document.getElementById('colorPicker')
+		const canvas = document.getElementById('canvas')
+		const pen = canvas.getContext('2d')
+		let prevX = 0;
+		let prevY = 0;
+		let color = 'black'
+		let size = 10
+
+		widthInput.onblur = () => {
+			size = parseInt(widthInput.value)}
+		colorpicker.onclick = (e) => {
+			if (e.target.tagName == 'BUTTON') {
+				color = e.target.name
+			}
+
+		}
+
+		function clearAll() {
+			pen.fillRect(0, 0, 1000, 700)
+			pen.fillStyle = 'white'
+			pen.stroke()
+		}
+
+	function draw(x, y, color) {
+		pen.strokeStyle = color;
+		pen.lineWidth = size;
+		pen.lineCap = "round";
+
+		pen.beginPath();
+		pen.moveTo(prevX, prevY);
+		pen.lineTo(x, y);
+		pen.stroke();
+    }
+
+    canvas.onmousemove = function (e) {
+      if (e.buttons === 1) {
+        draw(e.offsetX, e.offsetY, color);
+      } else if (e.buttons === 2) {
+        draw(e.offsetX, e.offsetY, 'white');
+	  } 
+		//search about clearRect
+		  prevX = e.offsetX;
+		  prevY = e.offsetY;
+    };
+
+    canvas.oncontextmenu = function (e) {
+      e.preventDefault(); 
+    };
+
+	</script>
+</html>

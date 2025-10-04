@@ -1,0 +1,75 @@
+{
+  "Products": [
+    {
+      "id": "2",
+      "name": "Smart Watch",
+      "price": 129,
+      "imgUrl": "https://2b.com.eg/media/catalog/product/cache/661473ab953cdcdf4c3b607144109b90/w/t/wt567-min.jpg",
+      "quantity": 0,
+      "categoryId": 1,
+      "isPurched": false
+    },
+    {
+      "id": "3",
+      "name": "Gaming Mouse",
+      "price": 49000,
+      "imgUrl": "https://m.media-amazon.com/images/I/61QY3V6A-NL._UF894,1000_QL80_.jpg",
+      "quantity": 1,
+      "categoryId": "1",
+      "isPurched": false
+    },
+    {
+      "id": "6",
+      "name": "Queens Bed",
+      "price": 39.1,
+      "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzRytiJPtw6IHylMddr89v0vdC1mKDLfZfkw&s",
+      "quantity": 8,
+      "categoryId": 3,
+      "isPurched": false
+    }
+  ],
+  "Category": [
+    {
+      "id": "1",
+      "name": "Electronics"
+    },
+    {
+      "id": "2",
+      "name": "Computers"
+    },
+    {
+      "id": "3",
+      "name": "Furniture"
+    }
+  ],
+  "Users": [
+    {
+      "id": "ae2c",
+      "fullname": "ehabw",
+      "email": "ehabw@gmail.com",
+      "password": "123456",
+      "phone": [
+        1120633201,
+        151518342
+      ]
+    },
+    {
+      "id": "c6a1",
+      "fullname": "ehab2",
+      "email": "ehabw57@gmail.com",
+      "password": "123456",
+      "phone": [
+        134243314
+      ]
+    },
+    {
+      "id": "8a42",
+      "fullname": "ehab hegazy",
+      "email": "ehab@gmail.com",
+      "password": "123456",
+      "phone": [
+        34124422421
+      ]
+    }
+  ]
+}

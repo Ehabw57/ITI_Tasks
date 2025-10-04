@@ -1,0 +1,20 @@
+@if(product){
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <img class="img-fluid" style="height: 700px;" [src]="product.imgUrl" />
+    </div>
+    <div class="col-6">
+      <h2>{{ product.name }}</h2>
+      <p>{{ product.price }}</p>
+      <p>quantity: {{ product.quantity }}</p>
+      <button [routerLink]="['/']">Back</button>
+    </div>
+    <button (click)="nextProduct()" [disabled]="currentIndex == productIds.length - 1">next</button>
+    <button (click)="prevProduct()" [disabled]="!currentIndex">prev</button>
+  </div>
+</div>
+}@else {
+
+  <h1>Product not found</h1>
+}

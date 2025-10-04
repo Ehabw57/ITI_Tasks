@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+}
+
+footer{
+  background-color: red;
+  padding-block: 50px;
+  margin: 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+h4, p {
+  color: whitesmoke;
+  margin: 0;
+  margin-block: 8px;
+}
+
+.left {
+  align-items: flex-start;
+}
+

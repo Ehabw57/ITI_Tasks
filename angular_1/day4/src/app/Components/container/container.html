@@ -1,0 +1,35 @@
+<select [(ngModel)]="selectedCat">
+  <option value="0">All</option>
+  @for(cat of categories; track cat.id) {
+    <option [value]="cat.id">{{ cat.name }}</option>
+  }`
+</select>
+<p>You selected category: {{ selectedCat }}</p>
+@if(cart.length > 0) {
+<table class="table">
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Amount</th>
+      <th>Total</th>
+    </tr>
+  <tbody>
+    @for (prd of cart; track prd.id) {
+    <tr>
+      <td>{{ prd.name }}</td>
+      <td>{{ prd.price }}</td>
+      <td>{{ prd.amount }}
+        <button [disabled]="prd.amount <=1" (click)="prd.amount -= 1">-</button>
+        <button (click)="prd.amount += 1">+</button>
+      </td>
+      <td>{{ prd.amount * prd.price}}</td>
+    </tr>
+}
+</tbody>
+</table>
+}
+<app-main (addToCart)="addToCart($event)" [filterCat]="selectedCat"></app-main>
+<input type="text" maxlength="16" [(ngModel)]="cardNumber" placeholder="Enter your card number" />
+@if(cardNumber.length == 16){
+<p>{{ cardNumber | creditCard }}</p>
+}

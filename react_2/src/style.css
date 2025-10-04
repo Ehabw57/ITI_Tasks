@@ -1,0 +1,61 @@
+.image {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: inline-block;
+  background-position: center;
+  background-size: cover;
+}
+
+input {
+  padding: 10px;
+}
+
+.container {
+  margin-top: 30px;
+  display: flex;
+  gap: 12px;
+}
+
+button:disabled {
+  background-color: #aaa;
+  color: #ccc;
+}
+button {
+  padding: 10px 20px;
+}
+.add {
+  border-radius: 30px;
+  background-color: blue;
+  color: white;
+  border: none;
+}
+
+td > div {
+  gap: 6px;
+  align-items: center;
+  display: flex;
+}
+
+th {
+  text-align: left;
+}
+
+table {
+  margin-top: 100px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  border-inline: none;
+  padding: 33px;
+  text-align: left;
+}
+
+th,
+.email {
+  color: blue;
+}

@@ -1,0 +1,22 @@
+nav {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  padding-block: 10px;
+  padding-inline: 15px;
+}
+.logo {
+  background-image: url('../../assets/logo.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 130px;
+  height: 50px;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  font-weight: 700;
+}
